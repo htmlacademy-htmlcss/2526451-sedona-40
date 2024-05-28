@@ -1,7 +1,7 @@
 # Личный проект «Седона»
 
 * Студент: [Родион Янушкевич](https://up.htmlacademy.ru/htmlcss/40/user/2526451).
-* Наставник: [Антон Варнавский] (https://htmlacademy.ru/profile/anton_varnauski).
+* Наставник: [Антон Варнавский](https://htmlacademy.ru/profile/anton_varnauski).
 
 ---
 
