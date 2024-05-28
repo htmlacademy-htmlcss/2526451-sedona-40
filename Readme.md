@@ -2,7 +2,7 @@
 
 * Студент: [Родион Янушкевич](https://up.htmlacademy.ru/htmlcss/40/user/2526451).
 * Наставник: [Антон Варнавский](https://htmlacademy.ru/profile/anton_varnauski).
-
+* Сайт: [Мой проект Седона](https://rodionyanushkevich.github.io/2526451-sedona-40/)
 ---
 
 _Не удаляйте и не обращайте внимание на файлы:_<br>
