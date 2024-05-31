@@ -5,7 +5,7 @@
     <title>Каталог Седона</title>
   </head>
   <body>
-    <header class="page-header">
+    <header class="page-header" data-test="header">
       <nav class="navigation">
         <a class="navigation-logo" href="index.html">
           <img src="#" alt="Логотип Седона">
@@ -37,29 +37,30 @@
       </nav>
       <a href="#" class="header-button">Хочу сюда!</a>
     </header>
-    <main class="main-inner">
-      <section class="inner-hero">
+    <main class="main-inner" data-test="main">
         <header class="inner-header">
           <h1 class="inner-header-title">Гостиницы Седоны</h1>
-          <ul class="breadcrumbs">
+          <ol class="breadcrumbs">
             <li class="breadcrumbs-item">
               <a href="index.html" class="breadcrumbs-link">
                 <span class="visually-hidden">Главная</span>
               </a>
             </li>
             <li class="breadcrumbs-item">
-              <a class="breadcrumbs-link">Гостиницы</a>
+              <a class="breadcrumbs-link" href="catalog.html">Гостиницы</a>
             </li>
-          </ul>
+          </ol>
         </header>
-        <form class="catalog-form" action="https://echo.htmlacademy.ru/" method="post">
+        <section class="filter" data-test="filter">
+          <h2 class="visually-hidden">Фильтры</h2>
+        <form class="catalog-form" action="https://echo.htmlacademy.ru/" method="post" data-test="filter">
           <fieldset class="catalog-filter-group">
             <legend class="catalog-filter-title">Инфраструктура:</legend>
             <ul class="catalog-filter-list">
               <li class="catalog-filter-item">
                 <label class="control">
-                  <input type="checkbox" class="control-input" checked name="Бассеин">
-                  Бассеин
+                  <input type="checkbox" class="control-input" checked name="Бассейн">
+                  Бассейн
                 </label>
               </li>
               <li class="catalog-filter-item">
@@ -99,16 +100,18 @@
               </li>
             </ul>
           </fieldset>
-          <!-- <h3>Стоимость, ₽:</h3>
+          <fieldset class="catalog-filter-group">
+            <legend class="catalog-filter-title">Стоимость, ₽:</legend>
           <ul class="filters-item">
               <li class="filters-item-cost">
-                      <input type="number" id="min-cost" placeholder="от">
-                      <input type="number" id="max-cost" placeholder="до">
+                      <input type="number" id="min-prise" placeholder="от">
+                      <input type="number" id="max-prise" placeholder="до">
                 </li>
-                <li class="cost-range">
+                <li class="prise-range">
               <input type="range">
               </li>
-          </ul> -->
+          </ul> 
+          </fieldset>
           <button type="submit" class="apply-button" value="Применить">
             Применить
           </button>
@@ -116,8 +119,9 @@
             Сбросить
           </button>
         </form>
+
       </section>
-      <section class="catalog">
+      <section class="catalog" data-test="catalog">
         <h2 class="catalog-product-title">
           Найдено гостиниц: <span class="number-of-hotels">38</span>
         </h2>
@@ -220,7 +224,7 @@
             <a class="pagination-link" href="#">4</a>
           </li>
           <li class="pagination-item pagination-dotted">
-            <span class="visually-hidden">еще</span>
+            ...
           </li>
           <li class="pagination-item">
             <a class="pagination-link" href="#">10</a>
@@ -228,7 +232,7 @@
         </ul>
       </section>
 
-      <section class="subscribe">
+      <section class="subscribe" data-test="subscribe">
         <form class="subscribe-form" method="post" action="https://echo.htmlacademy.ru">
           <h2><label for="email-subscribe">Подпишитесь на рассылку</label></h2>
           <p>Только полезная информация и никакого спама, честное бойскаутское!</p>
@@ -237,7 +241,7 @@
         </form>
       </section>
     </main>
-    <footer class="page-footer">
+    <footer class="page-footer" data-test="footer">
       <ul class="social-list">
         <li>
           <a href="https://vk.com/htmlacademy" class="social-list-item">

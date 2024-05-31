@@ -5,7 +5,7 @@
     <title>HTML Academy: Седона</title>
   </head>
   <body>
-    <header class="page-header">
+    <header class="page-header" data-test="header">
       <nav class="navigation">
           <a class="navigation-logo" href="index.html" >
               <img src="#" alt="Логотип Седона">
@@ -35,13 +35,13 @@
       </nav>
       <a href="#" class="header-button">Хочу сюда!</a>
     </header>
-    <main class="page-index">
-      <section class="hero">
+    <main class="page-index" data-test="main">
+      <section class="hero" data-test="hero">
         <h1 class="visually-hidden">Седона - сервис бронирования отелей</h1>
-        <img src="#" class="hero-welcome-image" alt="приветствие Welcome на фоне гор">
+        <img src="#" class="hero-welcome-image" alt="Welcome to the gorgeous Sedona, because the Grand canyon sucks!">
       </section>
 
-      <section class="advantages">
+      <section class="advantages" data-test="advantages">
         <!-- Цитата или заголовок 2 или параграф...? -->
         <p class="advantages-title">Седона — небольшой городок в Аризоне, заслуживающий большего!</p>
         <p class="advantages-description">Рассмотрим причины, по которым Седона круче, чем Гранд-Каньон!</p>
@@ -102,7 +102,7 @@
           </li>
         </ul>
       </section>
-      <section class="search">
+      <section class="search" data-test="search">
         <h2>Заинтересовались?</h2>
         <p>
           Укажите предполагаемые даты поездки, и мы покажем вам лучшие
@@ -114,7 +114,7 @@
       </section>
  
 
-      <section class="subscribe">
+      <section class="subscribe" data-test="subscribe">
         <form class="subscribe-form" method="post" action="https://echo.htmlacademy.ru">
             <h2> <label for="email-subscribe">Подпишитесь на рассылку</label></h2>
             <p>Только полезная информация и никакого спама, честное бойскаутское!</p>
@@ -124,7 +124,7 @@
       </section>
 
     </main>
-    <footer class="page-footer">
+    <footer class="page-footer" data-test="footer">
             <ul class="social-list">
               <li>
                 <a href="https://vk.com/htmlacademy" class="social-list-item">
