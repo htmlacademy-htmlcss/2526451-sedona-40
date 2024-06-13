@@ -26,6 +26,7 @@
           <li class="navigation-item">
             <a href="catalog.html" class="navigation-link navigation-link-current">Гостиницы</a>
           </li>
+
         </ul>
 
         <ul class="navigation-user">
@@ -60,25 +61,26 @@
             </li>
           </ol>
         </header>
+
         <section class="filter" data-test="filter">
           <h2 class="visually-hidden">Фильтры</h2>
           <form name="catalog-filter-form" class="catalog-form" action="https://echo.htmlacademy.ru/" method="post">
             <fieldset class="catalog-filter-group">
               <legend class="catalog-filter-title">Инфраструктура:</legend>
-              <ul class="catalog-filter-list">
-                <li class="catalog-filter-item">
+              <ul class="infrastructure-filter-list">
+                <li class="infrastructure-filter-item">
                   <label class="control">
                     <input type="checkbox" class="control-input" checked name="Бассейн">
                     Бассейн
                   </label>
                 </li>
-                <li class="catalog-filter-item">
+                <li class="infrastructure-filter-item">
                   <label class="control">
                     <input type="checkbox" class="control-input" checked name="Парковка">
                     Парковка
                   </label>
                 </li>
-                <li class="catalog-filter-item">
+                <li class="infrastructure-filter-item">
                   <label class="control">
                     <input type="checkbox" class="control-input" name="Wi-Fi">
                     Wi-Fi
@@ -86,7 +88,7 @@
                 </li>
               </ul>
             </fieldset>
-            <fieldset class="catalog-filter-group">
+            <fieldset class="catalog-filter-radio">
               <legend class="catalog-filter-title">Тип Жилья:</legend>
               <ul class="catalog-filter-list">
                 <li class="catalog-filter-item">
@@ -111,22 +113,25 @@
             </fieldset>
             <fieldset class="catalog-filter-prise">
               <legend class="catalog-filter-title">Стоимость, ₽:</legend>
-              <ul class="filters-item">
-                <li class="filters-item-cost">
-                  <input type="number" id="min-prise" placeholder="от">
-                  <input type="number" id="max-prise" placeholder="до">
+              <ul class="filters-prise-list">
+                <li class="filters-prise-item">
+                  <input type=" number" class="min-prise" id="min-prise" placeholder="от">
+                  <input type="number" class="max-prise" id="max-prise" placeholder="до">
                 </li>
                 <li class="prise-range">
                   <input type="range">
                 </li>
               </ul>
             </fieldset>
-            <button type="submit" class="apply-button button-blue" value="Применить">
-              Применить
-            </button>
-            <button type="reset" class="reset-button" value="Сбросить">
-              Сбросить
-            </button>
+            <fieldset class="catalog-filter-buttons">
+              <legent class="visually-hidden">Кнопки применитьб сбросить</legent>
+              <button type="submit" class="apply-button button-blue" value="Применить">
+                Применить
+              </button>
+              <button type="reset" class="reset-button" value="Сбросить">
+                Сбросить
+              </button>
+            </fieldset>
           </form>
         </section>
       </div>
@@ -160,7 +165,7 @@
             </li>
           </ul>
         </div>
-
+        <!-- Карточки товаров -->
         <ul class="product-list">
           <li class="product-card">
             <img class="product-card-image" src="images/Catalog/hotel-1.jpg" alt="горы на фоне звезд" width="300"
@@ -168,8 +173,8 @@
             <h3 class="product-card-title">Amara Resort & Spa</h3>
             <p class="product-card-type">Гостиница</p>
             <span class="product-card-prise"> От 4000 ₽</span>
-            <p><a class="button-brown product-card-link" href="#">подробнее</a>
-              <a class="button-blue to-favorites" href="#">
+            <p><a class="button-brown product-card-link" href="#">подробнее</a></p>
+            <p><a class="button-blue to-favorites" href="#">
                 в избранное
               </a>
             </p>
@@ -180,12 +185,14 @@
           <li class="product-card">
             <img class="product-card-image" src="images/Catalog/hotel-2.jpg" alt="горы на фоне радуги" width="300"
                  height="212">
-            <h3 class="product-card-title">Villas at Poco Diablo</h3>
+            <h3 class="product-card-title">Villas at Poco Diablo </h3>
             <p class="product-card-type">Гостиница</p>
             <span class="product-card-prise"> От 5000 ₽</span>
+
             <p>
               <a class="button-brown product-card-link" href="#">подробнее</a>
-              <a class="button-favorite to-favorites" href="#">
+            </p>
+            <p><a class="button-favorite to-favorites" href="#">
                 в избранном
               </a>
             </p>
@@ -199,12 +206,9 @@
             <h3 class="product-card-title">Desert Quail Inn</h3>
             <p class="product-card-type">Гостиница</p>
             <span class="product-card-prise"> От 2500 ₽</span>
-            <p>
-              <a class="button-brown product-card-link" href="#">подробнее</a>
-              <a class="button-blue to-favorites" href="#">
-                в избранное
-              </a>
-            </p>
+            <p><a class="button-brown product-card-link" href="#">подробнее</a></p>
+            <p><a class="button-blue to-favorites" href="#">в избранное</a></p>
+
             <p class="visually-hidden">3 звезды.</p>
             <b class="rating">Рейтинг:6,9</b>
           </li>
@@ -217,13 +221,15 @@
             <span class="product-card-prise"> От 1500 ₽</span>
             <p>
               <a class="button-brown product-card-link" href="#">подробнее</a>
-              <a class="button-blue to-favorites" href="#">
+            </p>
+            <p> <a class="button-blue to-favorites" href="#">
                 в избранное
               </a>
             </p>
             <p class="visually-hidden">2 звезды.</p>
             <b class="rating">Рейтинг:5,0</b>
           </li>
+
         </ul>
 
         <ul class="pagination">
