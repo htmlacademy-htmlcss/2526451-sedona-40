@@ -15,6 +15,7 @@
   font-display: swap;
 }
 
+/* Формат HEEEEX */
 html {
   height: 100%;
 }
@@ -27,11 +28,10 @@ body {
   background-color: #F2F2F2;
   color: #333333;
   height: 100%;
-
 }
 
 button {
-  font-family: "PT Sans", sans-serif;
+  font-family: inherit;
 }
 
 .body-container {
@@ -74,7 +74,6 @@ button {
   width: 1200px;
 }
 
-/* flex-grow? */
 .navigation {
   display: flex;
   margin: 0;
@@ -94,8 +93,12 @@ button {
   z-index: 1;
   display: block;
   margin: 0;
-  margin-right: 30px;
+  padding: 0;
+}
 
+.navigation-logo {
+  outline: none;
+  margin-right: 30px;
 }
 
 /* Ссылки навигации */
@@ -169,27 +172,43 @@ button {
   opacity: 0.3;
 }
 
-.navigation-user-link-search {
-  background-image: url(../images/search.svg);
-  background-size: 18px 18px;
-  background-repeat: no-repeat;
-  background-position: center;
+.navigation-user-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.navigation-user-link:focus path,
+.navigation-user-link:hover path {
+  opacity: 0.6;
+}
+
+.navigation-user-link:focus {
+  outline: none;
+}
+
+.navigation-user-link:active path {
+  opacity: 0.3;
 }
 
 .navigation-user-link-favorite {
-  background-image: url(../images/favorite.svg);
-  background-size: 18px 17 px;
-  background-repeat: no-repeat;
-  background-position: center;
+  position: relative;
 }
 
-
-
 .notification-badge {
+  position: absolute;
+  display: block;
   font-size: 10px;
-  line-height: 10px;
+  line-height: 20px;
   color: #FFFFFF;
   background-color: #7DB54F;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  right: 4px;
+  top: 11px
 }
 
 
@@ -208,7 +227,7 @@ button {
 }
 
 
-
+/* Кнопки */
 .button-blue {
   display: inline-block;
   color: #FFFFFF;
@@ -229,7 +248,7 @@ button {
 }
 
 .button-blue:active {
-  opacity: 0.3;
+  color: rgba(255, 255, 255, 0.3);
 }
 
 .button-blue:disabled {
@@ -258,17 +277,14 @@ button {
 }
 
 .button-brown:active {
-  opacity: 0.3;
+  color: rgba(255, 255, 255, 0.3);
+
 }
 
 .button-brown:disabled {
   color: rgba(255, 255, 255, 1);
   background-color: rgba(229, 229, 229, 1);
-
 }
-
-
-
 
 /* Велком подпись с фоном */
 .hero {
@@ -309,7 +325,7 @@ button {
 
 /* Шрифты */
 .advantages-title,
-.infrastructure-title,
+.service-title,
 .search-title {
   font-weight: 700;
   font-size: 30px;
@@ -321,7 +337,7 @@ button {
 }
 
 .advantages-description,
-.infrastructure-description,
+.service-description,
 .search-description {
   margin-left: auto;
   margin-right: auto;
@@ -335,7 +351,7 @@ button {
 .advantages-title {
   width: 651px;
   align-self: center;
-  margin-top: 65px;
+  margin-top: 69px;
   margin-bottom: 25px;
   margin-left: auto;
   margin-right: auto;
@@ -350,7 +366,6 @@ button {
   margin-bottom: 90px;
 }
 
-
 /* Блок преимуществ */
 
 .advantages-list {
@@ -362,9 +377,8 @@ button {
 }
 
 .advantages-item {
-  /* height: 385px; */
   box-sizing: border-box;
-
+  position: relative;
 }
 
 /* светло-синий Ф0.12 */
@@ -388,6 +402,33 @@ button {
 
 }
 
+.advantages-item:not(.advantages-item.advantages-wide)::after {
+  position: absolute;
+  display: block;
+  content: "";
+  background-color: #000000;
+  opacity: 0.3;
+  height: 2px;
+  width: 60px;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%);
+}
+
+.advantages-item-container::after {
+  position: absolute;
+  display: block;
+  content: "";
+  background-color: #ffffff;
+  opacity: 0.3;
+  height: 2px;
+  width: 60px;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%);
+}
+
+
 .advantages-image {
   display: block;
   margin: 0;
@@ -410,6 +451,7 @@ button {
   margin: 0;
   padding: 102px 0;
   width: 100%;
+  position: relative;
 }
 
 .advantages-item-title {
@@ -436,7 +478,7 @@ button {
 }
 
 /* Заголовок ифраструктур */
-.infrastructure-title {
+.service-title {
   width: 505px;
   align-self: center;
   margin-top: 64px;
@@ -446,7 +488,7 @@ button {
   margin-right: auto;
 }
 
-.infrastructure-description {
+.service-description {
   width: 505px;
   align-self: center;
   margin-top: 20px;
@@ -457,7 +499,7 @@ button {
 }
 
 /* Блок инфраструктур */
-.infrastructure-list {
+.service-list {
   display: flex;
   flex-wrap: wrap;
   list-style-type: none;
@@ -466,14 +508,14 @@ button {
 
 }
 
-.infrastructure-item {
+.service-item {
   flex-grow: 1;
   box-sizing: border-box;
   padding: 81px 0px;
 
 }
 
-.infrastructure-item:nth-child(1) {
+.service-item:nth-child(1) {
   background-image: url(../images/home-icon.svg);
   background-repeat: no-repeat;
   background-size: 75px 72px;
@@ -481,21 +523,21 @@ button {
 
 }
 
-.infrastructure-item:nth-child(2) {
+.service-item:nth-child(2) {
   background-image: url(../images/food-icon.svg);
   background-size: 74px 70 px;
   background-repeat: no-repeat;
   background-position: center 81px;
 }
 
-.infrastructure-item:nth-child(3) {
+.service-item:nth-child(3) {
   background-image: url(../images/souvenirs-icon.svg);
   background-size: 64px 76px;
   background-repeat: no-repeat;
   background-position: center 81px;
 }
 
-.infrastructure-item-title {
+.service-item-title {
   width: 230px;
   margin-top: 102px;
   margin-bottom: 30px;
@@ -510,7 +552,7 @@ button {
 
 }
 
-.infrastructure-item-description {
+.service-item-description {
   width: 230px;
   margin-top: 30px;
   margin-bottom: 0px;
@@ -519,8 +561,8 @@ button {
   text-align: center;
 }
 
-.infrastructure-item:nth-child(1),
-.infrastructure-item:nth-child(3) {
+.service-item:nth-child(1),
+.service-item:nth-child(3) {
   background-color: rgba(131, 179, 211, 0.12);
 }
 
@@ -551,9 +593,6 @@ button {
   padding: 8px 50px;
 }
 
-
-
-
 /* Блок subscribe */
 .subscribe-container {
   margin: 0;
@@ -562,12 +601,56 @@ button {
   justify-content: center;
 }
 
-.subscribe-button-email-input {
-  box-sizing: border-box;
+.subscribe-input {
   margin: 0;
-  padding: 0;
   width: 452px;
 }
+
+.field {
+  color: #000000;
+  font: inherit;
+  background-color: rgba(242, 242, 242, 1);
+  line-height: 24px;
+  border: none;
+  padding: 14px 20px;
+  box-sizing: border-box;
+}
+
+.border-radius-left {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+.border-radius-right {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+/* пока не понял как реалтизовать */
+.subscribe-input:hover,
+.subscribe-input:focus {
+  outline: #83B3D3;
+  outline-width: 2px;
+
+}
+
+.subscribe-input:disabled {
+  background-color: rgba(229, 229, 229, 1);
+}
+
+/* разобраться */
+/* .subscribe-input::placeholder {} */
+
+
+.catalog-input {
+  background-color: rgba(242, 242, 242, 1);
+}
+
+.subscribe-button {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
 
 .subscribe-main {
   background-image: url(../images/subscribe-background.jpg);
@@ -731,14 +814,360 @@ button {
   padding: 0;
 } */
 
+/* Modal window  */
+.modal-container {
+  position: fixed;
+  display: flex;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(242, 242, 242, 0.8);
+  z-index: 2;
+}
+
+/* Show modal window */
+.modal-container-close {
+  display: none;
+}
+
+.modal {
+  position: relative;
+  margin: auto;
+  width: 717px;
+  padding: 64px 70px;
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 1);
+  box-shadow: 0px 25px 50px rgba(0, 0, 0, 0.15);
+  border-radius: 30px;
+}
+
+.modal-tittle {
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 36px;
+  text-transform: uppercase;
+  color: #000000;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 64px;
+}
+
+.modal-close-button {
+  position: absolute;
+  top: 64px;
+  right: 52px;
+  height: 52px;
+  width: 52px;
+  border-radius: 50%;
+  background-color: rgba(242, 242, 242, 1);
+  border: none;
+  cursor: pointer;
+  padding: 20px 19px 19px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+.modal-close-button:hover {
+  background-color: rgba(230, 230, 230, 1);
+}
+
+.modal-close-button:focus {
+  outline: 3px solid rgba(131, 179, 211, 1);
+  background-color: rgba(230, 230, 230, 1)
+}
+
+.modal-close-button:active {
+  background-color: rgba(230, 230, 230, 1)
+}
+
+.modal-close-button:active .close-button-icon path {
+  opacity: 0.3;
+}
+
+.modal-content {
+  width: 577px;
+}
+
+.modal-form {
+  display: grid;
+  grid-template-columns: 137px 110px 1fr 137px 111px;
+  row-gap: 48px;
+}
+
+.modal-input {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 12px 20px;
+  background-color: rgba(242, 242, 242, 1);
+  border-radius: 4px;
+  border: none;
+}
+
+.modal-input::placeholder {
+  color: #000000;
+  opacity: 0.3;
+}
+
+.modal-input:hover {
+  background-color: #E6E6E6;
+}
+
+.modal-input:focus {
+  background-color: #E6E6E6;
+  outline: 3px solid #83B3D3;
+}
+
+
+.modal-input-label {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: #000000;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-transform: capitalize;
+}
+
+.modal-input-container {
+  position: relative;
+  grid-column: 2/6;
+}
+
+.calendar-icon {
+  position: absolute;
+  top: 16px;
+  right: 22px;
+  bottom: 17px;
+  /* left: 402px; */
+  opacity: 0.3;
+}
+
+.check-signature {
+  position: absolute;
+  top: 52px;
+  left: 20px;
+  font-size: 16px;
+  line-height: 21px;
+}
+
+.check-signature.check-signature-error {
+  color: rgba(255, 87, 87, 1);
+}
+
+.adults-value-input,
+.children-value-input {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 12px 20px;
+  background-color: rgba(242, 242, 242, 1);
+  border-radius: 4px;
+  border: none;
+  text-align: center;
+
+}
+
+.adults-value-input::-webkit-inner-spin-button,
+.adults-value-input::-webkit-outer-spin-button,
+.children-value-input::-webkit-inner-spin-button,
+.children-value-input::-webkit-outer-spin-button {
+  appearance: none;
+}
+
+.modal-spin-container {
+  position: relative;
+}
+
+.plus-button,
+.minus-button {
+  position: absolute;
+  cursor: pointer;
+  border: none;
+  top: 14px;
+  box-sizing: border-box;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  padding: 0;
+}
+
+.plus-button {
+  right: 10px;
+}
+
+.minus-button {
+  left: 10px;
+}
+
+.minus-icon {
+  height: 2px;
+  width: 14px;
+  background-color: rgba(117, 97, 87, 0.3);
+}
+
+.plus-icon {
+  position: relative;
+  height: 2px;
+  width: 14px;
+  background-color: rgba(117, 97, 87, 0.3);
+}
+
+.plus-icon::after {
+  display: block;
+  content: "";
+  height: 6px;
+  width: 2px;
+  position: absolute;
+  background-color: inherit;
+  left: 6px;
+  top: 2px;
+}
+
+.plus-icon::before {
+  display: block;
+  content: "";
+  height: 6px;
+  width: 2px;
+  position: absolute;
+  color: transparent;
+  background-color: inherit;
+  left: 6px;
+  top: -6px;
+}
+
+/* Состояние иконок плюс/минус */
+.children-value-input:focus,
+.adults-value-input:focus {
+  outline: none;
+}
+
+.plus-button:hover .plus-icon,
+.minus-button:hover .minus-icon {
+  background-color: #000000;
+}
+
+.plus-button:focus,
+.minus-button:focus {
+  outline: 3px solid #82B3D3;
+
+}
+
+.plus-button:focus .plus-icon,
+.minus-button:focus .minus-icon {
+  background-color: #000000;
+}
+
+.plus-button:active .plus-icon,
+.minus-button:active .minus-icon {
+  opacity: 0.2;
+}
+
+.tooltip-wrapper {
+  grid-column: 4/5;
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  position: relative
+}
+
+/* tooltip */
+.modal-tooltip {
+  position: relative;
+  display: block;
+  width: 26px;
+  height: 26px;
+  border: none;
+  border-radius: 50%;
+  background-color: rgba(131, 179, 211, 1);
+  background-image: url(../images/modal-tooltip.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.modal-tooltip:hover {
+  opacity: 0.6;
+}
+
+.tooltip-container {
+  position: relative;
+}
+
+/* Show tooltip */
+
+.tooltip-content {
+  box-sizing: border-box;
+  position: absolute;
+  display: block;
+  width: 256px;
+  background-color: #333333;
+  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  padding: 15px 18px 18px 22px;
+  display: none;
+  font-size: 16px;
+  line-height: 20px;
+  color: #FFFFFF;
+  left: 4px;
+  top: 40px;
+  transform: translateX(-50%);
+
+
+}
+
+.modal-tooltip:hover+.tooltip-content,
+.modal-tooltip:focus+.tooltip-content {
+  display: block;
+}
+
+.tooltip-content::after {
+  display: inherit;
+  background-image: url(../images/tooltip-arrow.svg);
+  width: 19px;
+  height: 9px;
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+}
+
+
+.modal-search-button {
+  grid-column: 1/6;
+  padding: 18px 0;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+}
 
 /* Страница каталога */
 
 .filter-container {
   background-image: url(../images/catalog-background.jpg);
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: 100% 100%;
   padding: 35px 70px 70px 70px;
+  height: 412px;
+  box-sizing: border-box;
 }
 
 /* Хлебные крошки */
@@ -757,17 +1186,33 @@ button {
 
 }
 
+.breadcrumbs-link:hover,
+.breadcrumbs-item:first-child:hover {
+  opacity: 0.6;
+}
+
+
+.breadcrumbs-link:focus {
+  outline: none;
+}
+
+.breadcrumbs-item:first-child:active,
+.breadcrumbs-link:active {
+  opacity: 0.3;
+}
+
+
+
 .breadcrumbs-item:first-child {
   width: 12px;
   background-image: url(../images/catalog-main.svg);
   background-repeat: no-repeat;
-  background-position: center;
-
+  background-position: center left;
 }
 
 .breadcrumbs-item:not(:first-child) {
   padding-left: 18px;
-  background-image: url(../images/arrow.svg);
+  background-image: url(../images/arrow-right.svg);
   background-repeat: no-repeat;
   background-position: center left;
 }
@@ -794,8 +1239,9 @@ button {
   padding: 0;
   display: flex;
   box-sizing: border-box;
-}
+  color: #ffffff;
 
+}
 
 
 
@@ -812,32 +1258,107 @@ button {
   margin-bottom: 32px;
 }
 
+.catalog-form fieldset {
+  border: none;
+}
+
 .catalog-filter-item,
 .infrastructure-filter-item {
   margin-top: 0;
   margin-bottom: 16px;
 }
 
-.catalog-filter-item :last-child,
+
+.catalog-filter-item:last-child,
 .infrastructure-filter-item:last-child {
   margin: 0;
   margin-bottom: 0;
 
 }
 
-.catalog-filter-group {
+.catalog-filter-checkbox {
   margin: 0;
   padding: 0;
-
   margin-right: 70px;
   box-sizing: border-box;
+}
+
+.control {
+  margin: 0;
+  padding: 0;
+  display: block;
+  position: relative;
+  padding-left: 36px;
 
 }
+
+.control-mark::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #FFFFFF;
+  border-radius: 4px;
+  top: 1.5px;
+  left: 0;
+}
+
+
+
+/* .control-input:hover+.control-mark-radio::before,
+.control-input:hover+.control-mark::before {
+  opacity: 0.6;
+
+} */
+.control-input:hover~span {
+  opacity: 0.6;
+}
+
+.control-input:focus+.control-mark-radio::before,
+.control-input:focus+.control-mark::before {
+  outline: 3px solid rgba(131, 179, 211, 1);
+}
+
+/* .control-input:active+.control-mark-radio::before,
+.control-input:active+.control-mark::before {
+  opacity: 0.3;
+} */
+.control-input:active~span {
+  opacity: 0.3;
+}
+
+
+.control-input:disabled~span {
+  opacity: 0.3;
+}
+
+.control-input[type="checkbox"]:checked+.control-mark::before {
+  content: "";
+  background-image: url(../images/check-mark.svg);
+  background-position: center 5px;
+  background-repeat: no-repeat;
+}
+
+.control-mark-radio::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: rgb(255, 255, 255, 1);
+  border-radius: 50%;
+  top: 1.5px;
+  left: 0;
+}
+
+.control-input[type="radio"]:checked+.control-mark-radio::before {
+  background-color: rgba(63, 94, 114, 1);
+  box-shadow: inset 0 0 0 5px rgba(255, 255, 255, 1);
+}
+
 
 .catalog-filter-radio {
   margin: 0;
   padding: 0;
-
   margin-right: auto;
   box-sizing: border-box;
 }
@@ -849,30 +1370,120 @@ button {
   margin-right: 70px;
 }
 
-.filters-prise-list {
+.range-scale {
+  position: relative;
+  height: 4px;
+  width: 287px;
+  background-color: rgba(255, 255, 255, 0.3);
+  /* Пока */
+  cursor: pointer;
+
+}
+
+
+.range-bar {
+  position: absolute;
+  height: 4px;
+  width: 226px;
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.range-toggle {
+  display: block;
+  position: absolute;
+  background: #FFFFFF;
+  border-radius: 5px;
+  height: 20px;
+  width: 20px;
+  border: none;
+}
+
+.range-toggle:hover {
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.25);
+}
+
+.range-toggle:focus {
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.25);
+  outline: 3px solid rgba(131, 179, 211, 1);
+}
+
+.range-toggle:active {
+  outline: 2px solid #83B3D3;
+  box-shadow: 0px 7px 15px rgba(0, 0, 0, 0.4);
+}
+
+.toggle-min {
+  top: -8px;
+
+}
+
+.toggle-max {
+  top: -8px;
+  right: -10px;
+}
+
+.scale-inputs {
+  display: flex;
+  column-gap: 2px;
   margin: 0;
   padding: 0;
-  list-style-type: none;
+  margin-bottom: 48px;
+
 }
 
-.filters-prise-item {
-  display: flex;
-  row-gap: 2px;
+.range-input {
+  margin: 0;
+  width: 142px;
+  height: 48px;
+  font: inherit;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
+
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
 }
 
+.range-input:hover {
+  background-color: (230, 230, 230, 1);
+}
+
+.range-input:focus {
+  outline: 3px solid rgba(131, 179, 211, 1);
+}
+
+.scale-inputs-wrapper {
+  position: relative;
+}
+
+/* max-length? */
+.range-input+label {
+  position: absolute;
+  right: 20px;
+  top: 12px;
+  color: rgba(0, 0, 0, 0.3);
+  font-size: 18px;
+  line-height: 24px;
+}
+
+/* плейсхоллдер изчезает.. а надо как?... */
+
+
+.range-input::-webkit-outer-spin-button,
+.range-input::-webkit-inner-spin-button {
+  appearance: none;
+  margin: 0;
+
+}
+
+/* проверь зачем тут МИНКонтент */
 .catalog-filter-buttons {
   margin: 0;
   padding: 0;
   padding-top: 56px;
   width: min-content;
-}
-
-.max-prise,
-.min-prise {
-  margin: 0;
-  padding: 0;
-  width: 142px;
-  box-sizing: border-box;
 }
 
 .catalog-filter-title {
@@ -978,10 +1589,6 @@ button {
 
 }
 
-.select-display-elements {
-  font-size: 18px;
-  line-height: 21px;
-}
 
 .view-buttons {
   margin: 0;
@@ -1022,6 +1629,42 @@ button {
   left: 0;
   margin: auto;
 }
+
+.select-wrapper {
+  display: flex;
+  position: relative;
+  width: 290px;
+  align-items: center;
+}
+
+.select-display-elements {
+  width: 100%;
+  padding: 14px 20px;
+  padding-right: 129px;
+  font: inherit;
+  appearance: none;
+  box-shadow: inset 0 0 0 2px rgba(229, 229, 229, 1);
+  border-radius: 4px;
+  border: none;
+  background-image: url(../images/arrow.svg);
+  background-repeat: no-repeat;
+  background-position: right 30px center;
+}
+
+.select-display-elements:focus,
+.select-display-elements:hover {
+  outline: 0;
+  box-shadow: inset 0 0 0 2px rgba(104, 162, 202, 1);
+}
+
+
+.select-display-elements:active {
+  box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 1);
+  color: #000000;
+  opacity: 0.3;
+
+}
+
 
 .view-button-link:hover {
   border: 2px solid rgba(0, 0, 0, 1);
@@ -1202,7 +1845,7 @@ button {
   line-height: 36px;
   color: #000000;
   background-color: #F2F2F2;
-
+  border-radius: 4px;
 }
 
 .pagination-link {
