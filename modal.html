@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <title>Модальное окно</title>
   <link rel="stylesheet" href="styles/styles.css">
-  <link rel="icon" href="favicon.ico" sizes="32x32">
+  <link rel="icon" href="images/favicon.png" sizes="32x32">
 </head>
 
 <body>
@@ -25,7 +25,6 @@
           <li class="navigation-item">
             <a class="navigation-link" href="catalog.html">Гостиницы</a>
           </li>
-
         </ul>
 
         <ul class="navigation-user">
@@ -38,7 +37,7 @@
             </button>
           </li>
           <li class="navigation-user-item">
-            <button class="navigation-user-link navigation-user-link-favorite" href="#" type="button">
+            <button class="navigation-user-link navigation-user-link-favorite" type="button">
               <span class="visually-hidden">Избранное.</span>
               <svg xmlns="http://www.w3.org/2000/svg" role="img" width="18" height="17" fill="none" viewBox="0 0 18 17">
                 <path fill="#000" d="M8.9 17a.9.9 0 0 1-.8-.4c-5.4-6.1-6.7-7.5-7-7.9A5.4 5.4 0 0 1 5.5 0C6.8 0 8 .5 9 1.3a5.46 5.46 0 0 1 9 4.1c0 1.3-.5 2.5-1.3 3.4l-7 7.9c-.2.2-.4.3-.8.3Zm-6-9.5c.3.4 3.5 4 6.1 6.9l6.2-7c.5-.5.7-1.2.7-2 0-1.8-1.5-3.3-3.3-3.3-1 0-2 .5-2.7 1.3-.3.3-.6.4-.9.4-.3 0-.6-.2-.8-.4-.7-.8-1.7-1.3-2.7-1.3-1.8 0-3.3 1.5-3.3 3.3-.1.9.3 1.6.7 2.1-.1 0-.1 0 0 0Z" />
@@ -52,7 +51,7 @@
       <a class="header-button button-brown" href="#">Хочу сюда!</a>
     </header>
 
-    <main class="main-container" data-test="main">
+    <main class="main" data-test="main">
       <section class="hero" data-test="hero">
         <h1 class="visually-hidden">Седона - сервис бронирования отелей.</h1>
         <img class="welcome-image" src="images/welcome.svg" alt="Welcome to the gorgeous Sedona, because the Grand canyon sucks!" width="458" height="352">
@@ -184,31 +183,27 @@
         </button>
 
         <section class="modal-content">
-          <h1 class="modal-tittle">Поиск гостиницы в Седоне</h1>
+          <h2 class="modal-tittle">Поиск гостиницы в Седоне</h2>
           <form class="modal-form" name="search-form" action="https://echo.htmlacademy.ru/" method="post">
             <label class="modal-input-label" for="check-in-date-arrival">Дата заезда:</label>
             <div class="modal-input-container">
               <input class="check-in-date-input modal-input" id="check-in-date-arrival" type="text" required name="check in date" value="27 Апреля 2020" placeholder="Укажите дату">
-              <svg class="calendar-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="15" fill="none" viewBox="0 0 16 15">
-                <path fill="#000" d="M5.75 10c.3 0 .5-.2.5-.5s-.2-.5-.5-.5-.5.2-.5.5.2.5.5.5Z" />
-                <path fill="#000" d="M15 2h-2V0h-1v2H4V0H3v2H1c-.6 0-1 .4-1 1v11c0 .5.4 1 1 1h14c.5 0 1-.5 1-1V3c0-.6-.5-1-1-1Zm0 12H1V7h14v7ZM1 6V3h2v2h1V3h8v2h1V3h2v3H1Z" />
-                <path fill="#000" d="M8 10c.3 0 .5-.2.5-.5S8.3 9 8 9s-.5.2-.5.5.2.5.5.5ZM10.25 10c.3 0 .5-.2.5-.5s-.2-.5-.5-.5-.5.2-.5.5.2.5.5.5ZM5.75 11c-.3 0-.5.2-.5.5s.2.5.5.5.5-.2.5-.5-.2-.5-.5-.5ZM3.5 10c.3 0 .5-.2.5-.5S3.8 9 3.5 9s-.5.2-.5.5.2.5.5.5ZM3.5 11c-.3 0-.5.2-.5.5s.2.5.5.5.5-.2.5-.5-.2-.5-.5-.5ZM8 11c-.3 0-.5.2-.5.5s.2.5.5.5.5-.2.5-.5-.2-.5-.5-.5ZM10.25 11c-.3 0-.5.2-.5.5s.2.5.5.5.5-.2.5-.5-.2-.5-.5-.5ZM12.5 10c.3 0 .5-.2.5-.5s-.2-.5-.5-.5-.5.2-.5.5.2.5.5.5ZM12.5 11c-.3 0-.5.2-.5.5s.2.5.5.5.5-.2.5-.5-.2-.5-.5-.5Z" />
-              </svg>
+              <button class="modal-calendar-button" type="button">
+                <span class="visually-hidden">Кнопка календаря.</span>
+              </button>
               <span class="check-signature check-signature-error">Мы не можем отправить вас в прошлое.</span>
             </div>
             <label class="modal-input-label" for="check-out-date-arrival">Дата выезда:</label>
             <div class="modal-input-container">
               <input class="check-out-date-input modal-input" id="check-out-date-arrival" type="text" required name="check out date" value="01 Сентября 2023" placeholder="Укажите дату">
-              <svg class="calendar-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="15" fill="none" viewBox="0 0 16 15">
-                <path fill="#000" d="M5.75 10c.3 0 .5-.2.5-.5s-.2-.5-.5-.5-.5.2-.5.5.2.5.5.5Z" />
-                <path fill="#000" d="M15 2h-2V0h-1v2H4V0H3v2H1c-.6 0-1 .4-1 1v11c0 .5.4 1 1 1h14c.5 0 1-.5 1-1V3c0-.6-.5-1-1-1Zm0 12H1V7h14v7ZM1 6V3h2v2h1V3h8v2h1V3h2v3H1Z" />
-                <path fill="#000" d="M8 10c.3 0 .5-.2.5-.5S8.3 9 8 9s-.5.2-.5.5.2.5.5.5ZM10.25 10c.3 0 .5-.2.5-.5s-.2-.5-.5-.5-.5.2-.5.5.2.5.5.5ZM5.75 11c-.3 0-.5.2-.5.5s.2.5.5.5.5-.2.5-.5-.2-.5-.5-.5ZM3.5 10c.3 0 .5-.2.5-.5S3.8 9 3.5 9s-.5.2-.5.5.2.5.5.5ZM3.5 11c-.3 0-.5.2-.5.5s.2.5.5.5.5-.2.5-.5-.2-.5-.5-.5ZM8 11c-.3 0-.5.2-.5.5s.2.5.5.5.5-.2.5-.5-.2-.5-.5-.5ZM10.25 11c-.3 0-.5.2-.5.5s.2.5.5.5.5-.2.5-.5-.2-.5-.5-.5ZM12.5 10c.3 0 .5-.2.5-.5s-.2-.5-.5-.5-.5.2-.5.5.2.5.5.5ZM12.5 11c-.3 0-.5.2-.5.5s.2.5.5.5.5-.2.5-.5-.2-.5-.5-.5Z" />
-              </svg>
+              <button class="modal-calendar-button" type="button">
+                <span class="visually-hidden">Кнопка календаря.</span>
+              </button>
               <span class="check-signature">На эти даты есть свободные номера. Пока есть.</span>
             </div>
 
             <!-- +/- взрослых/детей -->
-            <label class="modal-input-label" for="adults">Взрослые:</label>
+            <label class="modal-input-label modal-buttons-label" for="adults">Взрослые:</label>
             <div class="modal-spin-container">
               <input class="modal-value-input" type="number" name="adults" id="adults" value="2">
               <button class="plus-button" type="button">
@@ -221,7 +216,7 @@
               </button>
             </div>
             <div class="tooltip-wrapper">
-              <label class="modal-input-label" for="children">Дети:</label>
+              <label class="modal-input-label modal-buttons-label" for="children">Дети:</label>
               <button class="modal-tooltip" type="button" aria-labelledby="tooltip-label-date">
                 <span class="tooltip-content" role="tooltip" id="tooltip-label-date">Укажите количество детей, которые будут с вами, возраст которых от 6 до 18 лет. Дети до 6 лет размещаются бесплатно.</span>
               </button>

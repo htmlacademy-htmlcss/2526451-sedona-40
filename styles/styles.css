@@ -52,13 +52,12 @@ body {
   overflow: hidden;
 }
 
-.main-container {
+.main {
   flex-grow: 1;
   margin: 0;
   padding: 0;
 }
 
-/* Хедер */
 .page-header {
   display: flex;
   box-sizing: border-box;
@@ -81,7 +80,6 @@ body {
   margin-right: 20px;
 }
 
-/* Логотип */
 .logo-image {
   display: block;
   position: relative;
@@ -207,10 +205,6 @@ body {
 .navigation-user-link:active path {
   opacity: 0.3;
 }
-
-/* .navigation-user-link-favorite {
-  position: relative;
-} */
 
 .notification-badge {
   position: absolute;
@@ -438,8 +432,10 @@ body {
 
 .advantages-image {
   display: block;
+  max-width: 100%;
   margin: 0;
   padding: 0;
+  object-fit: contain;
 }
 
 .advantages-item.advantages-wide {
@@ -631,21 +627,19 @@ body {
   border-bottom-right-radius: 4px;
 }
 
-.error {
-  outline: 2px solid #ff5757;
-}
-
-.subscribe-input:invalid .subscribe-input.error {
-  outline: 2px solid #ff5757;
-}
 
 .subscribe-input:hover,
 .subscribe-input:focus {
-  outline: 2px solid #83b3d3;
+  outline: none;
+  box-shadow: inset 0 0 0 2px #83b3d3;
 }
 
 .subscribe-input:disabled {
   background-color: #e5e5e5;
+}
+
+.subscribe-input:invalid {
+  box-shadow: inset 0 0 0 2px #ff5757;
 }
 
 .catalog-input {
@@ -956,17 +950,45 @@ body {
   color: #000000;
 }
 
+.modal-buttons-label {
+  pointer-events: none;
+}
+
 .modal-input-container {
   position: relative;
   grid-column: 2/6;
 }
 
-.calendar-icon {
+.modal-calendar-button {
   position: absolute;
   top: 16px;
   right: 22px;
   bottom: 17px;
 
+  display: block;
+  height: 19px;
+  width: 20px;
+
+  background-image: url("../images/icons/calendar.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 15px 16px;
+  border-radius: 4px;
+  border: none;
+  opacity: 0.3;
+  cursor: pointer;
+}
+
+.modal-calendar-button:hover {
+  opacity: 1;
+}
+
+.modal-calendar-button:focus {
+  outline: 3px solid #82b3d3;
+  opacity: 1;
+}
+
+.modal-calendar-button:active {
   opacity: 0.3;
 }
 
@@ -1202,7 +1224,7 @@ body {
 
 /* Страница каталога */
 
-.filter-container {
+.catalog-background-container {
   padding: 35px 70px 70px;
   box-sizing: border-box;
 
@@ -1539,7 +1561,7 @@ body {
   text-transform: uppercase;
 }
 
-.inner-header-title {
+.filter-title {
   margin: 0;
   margin-bottom: 8px;
 
