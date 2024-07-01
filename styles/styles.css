@@ -372,6 +372,7 @@ body {
 
 .advantages-description {
   align-self: center;
+  width: 660px;
   padding: 0;
   margin-top: 25px;
   margin-bottom: 25px;
@@ -667,12 +668,13 @@ body {
 }
 
 .subscribe-main {
+  box-sizing: border-box;
   padding: 96px 0 104px;
 
   background-color: #6ca2c6;
   background-image: url("../images/subscribe-background.jpg");
-  background-repeat: repeat-y;
-  background-size: 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 
   text-align: center;
 }
