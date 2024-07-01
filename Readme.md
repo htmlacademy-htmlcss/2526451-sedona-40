@@ -1,8 +1,8 @@
 # Личный проект «Седона»
 
 * Студент: [Родион Янушкевич](https://up.htmlacademy.ru/htmlcss/40/user/2526451).
-* Наставник: `Неизвестно`.
-
+* Наставник: [Антон Варнавский](https://htmlacademy.ru/profile/anton_varnauski).
+* Сайт: [Мой проект Седона](https://rodionyanushkevich.github.io/2526451-sedona-40/)
 ---
 
 _Не удаляйте и не обращайте внимание на файлы:_<br>
@@ -31,6 +31,7 @@ _`.editorconfig`, `.gitattributes`, `.gitignore`, `Contributing.md`, `Readme.md`
 Нажмите на зелёную кнопку «Code». Далее в выпавшем списке выберите пункт «Download ZIP». Выберите папку для скачивания на компьютер, например «Загрузки».
 
 #### 4. Начинайте обучение!
+
 
 ---
 
