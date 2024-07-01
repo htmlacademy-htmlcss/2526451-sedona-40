@@ -530,14 +530,14 @@ body {
   background-image: url("../images/food.svg");
   background-size: 74px 70px;
   background-repeat: no-repeat;
-  background-position: center 81px;
+  background-position: center 82px;
 }
 
 .souvenirs-block {
   background-image: url("../images/souvenirs.svg");
   background-size: 64px 76px;
   background-repeat: no-repeat;
-  background-position: center 81px;
+  background-position: center 79px;
 }
 
 .service-item-title {
