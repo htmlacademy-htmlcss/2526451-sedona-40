@@ -149,11 +149,12 @@ body {
   position: absolute;
   left: 16px;
   right: 16px;
-  bottom: 0;
+  bottom: -1px;
   height: 2px;
 
 
   background-color: #756257;
+  z-index: 1;
 }
 
 /* Пользовательское меню */
@@ -180,6 +181,7 @@ body {
   height: 64px;
 
   background-color: #ffffff;
+  color: #000000;
   border: none;
   cursor: pointer;
 }
@@ -197,8 +199,8 @@ body {
   opacity: 0.3;
 }
 
-.navigation-user-link:focus path,
-.navigation-user-link:hover path {
+.navigation-user-link:focus .navigation-icon,
+.navigation-user-link:hover .navigation-icon {
   opacity: 0.6;
 }
 
@@ -206,7 +208,7 @@ body {
   outline: unset;
 }
 
-.navigation-user-link:active path {
+.navigation-user-link:active .navigation-icon {
   opacity: 0.3;
 }
 
@@ -230,6 +232,10 @@ body {
 
 .navigation-user-link:hover .notification-badge {
   background-color: #9ec77c;
+}
+
+.navigation-user-link:active .notification-badge {
+  background-color: #7db54f;
 }
 
 .header-button {
@@ -631,7 +637,6 @@ body {
   border-bottom-right-radius: 4px;
 }
 
-
 .subscribe-input:hover,
 .subscribe-input:focus {
   outline: none;
@@ -732,21 +737,24 @@ body {
   width: 100%;
   height: 100%;
 
+  color: #83b3d3;
+
   text-decoration: none;
 }
 
-.social-list-item:hover .social-list-icon path {
-  fill: #68a2ca;
+.social-list-item:hover {
+  color: #68a2ca;
+
 }
 
-.social-list-item:focus .social-list-icon path,
+.social-list-item:focus .social-list-icon,
 .social-list-item:focus {
   outline: unset;
-  fill: #68a2ca;
+  color: #68a2ca;
 }
 
-.social-list-item:active .social-list-icon path {
-  fill: rgba(104, 162, 202, 0.3);
+.social-list-item:active .social-list-icon {
+  color: rgba(104, 162, 202, 0.3);
 }
 
 .social-list-icon {
@@ -792,6 +800,8 @@ body {
   width: 115px;
   margin: auto 0;
   padding: 0;
+
+  color: #000000;
 }
 
 .html-logo-icon {
@@ -800,21 +810,21 @@ body {
   margin: auto;
 }
 
-.htmlacademy-logo-link:hover .html-logo-icon path {
-  fill: #756157;
+.htmlacademy-logo-link:hover .html-logo-icon {
+  color: #756157;
 }
 
-.htmlacademy-logo-link:focus .html-logo-icon path {
+.htmlacademy-logo-link:focus .html-logo-icon {
   outline: unset;
-  fill: #756157;
+  color: #756157;
 }
 
 .htmlacademy-logo-link:focus {
   outline: unset;
 }
 
-.htmlacademy-logo-link:active .html-logo-icon path {
-  fill: rgba(117, 97, 87, 0.3);
+.htmlacademy-logo-link:active .html-logo-icon {
+  color: rgba(117, 97, 87, 0.3);
 }
 
 /* Modal window  */
@@ -831,8 +841,7 @@ body {
 }
 
 /* Show modal window */
-.modal-container-close {
-  /* display: flex; */
+.modal-container-hide {
   display: none;
 }
 
@@ -877,6 +886,7 @@ body {
   align-items: center;
   justify-content: center;
 
+  color: #000000;
   border-radius: 50%;
   background-color: #f2f2f2;
   border: none;
@@ -896,7 +906,7 @@ body {
   background-color: #e6e6e6;
 }
 
-.modal-close-button:active .close-button-icon path {
+.modal-close-button:active .close-button-icon {
   opacity: 0.3;
 }
 
@@ -1007,7 +1017,7 @@ body {
 }
 
 .check-signature.check-signature-error {
-  color: rgba(255, 87, 87, 1);
+  color: #ff5757;
 }
 
 .modal-value-input {
@@ -1167,10 +1177,10 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   cursor: pointer;
+  outline: unset;
 }
 
 .modal-tooltip:focus {
-  outline: 3px solid #82b3d3;
   background-color: rgba(131, 179, 212, 0.6);
 }
 
@@ -1369,6 +1379,8 @@ body {
   line-height: 23px;
 
   color: #ffffff;
+
+  cursor: pointer;
 }
 
 .control-mark::before {
@@ -1417,7 +1429,7 @@ body {
   width: 20px;
   height: 20px;
 
-  background-color: rgb(255, 255, 255, 1);
+  background-color: #ffffff;
   border-radius: 50%;
 }
 
@@ -1728,13 +1740,13 @@ body {
 }
 
 .select-display-elements:active {
-  box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 1);
+  box-shadow: inset 0 0 0 2px #000000;
   color: #000000;
   opacity: 0.3;
 }
 
 .view-button-link:hover {
-  border: 2px solid rgba(0, 0, 0, 1);
+  border: 2px solid #000000;
 }
 
 .view-button-link:focus {
@@ -1743,11 +1755,11 @@ body {
 }
 
 .view-button-link:active {
-  border: 2px solid rgba(0, 0, 0, 1);
+  border: 2px solid #000000;
 }
 
 .view-button-link.current-button {
-  border: 2px solid rgba(0, 0, 0, 1);
+  border: 2px solid #000000;
 }
 
 .view-button-link.current-button:focus {
@@ -1808,7 +1820,7 @@ body {
 
 .card-image-link:hover,
 .card-title-link:hover {
-  opacity: 0.8;
+  opacity: 0.6;
 }
 
 .card-image-link:active,
