@@ -112,6 +112,7 @@ body {
 .navigation-list {
   display: flex;
   flex-wrap: wrap;
+  min-width: 339px;
   margin: 0;
   padding: 0;
 
@@ -161,6 +162,7 @@ body {
 .navigation-user {
   display: flex;
   flex-wrap: wrap;
+  min-width: 88px;
   margin: 0;
   padding: 0;
 
@@ -180,7 +182,6 @@ body {
   width: 44px;
   height: 64px;
 
-  background-color: #ffffff;
   color: #000000;
   border: none;
   cursor: pointer;
@@ -241,9 +242,7 @@ body {
 .header-button {
   box-sizing: border-box;
   width: 160px;
-  height: 36px;
-  margin: 0;
-  margin-top: 14px;
+  margin: 14px 0 20px;
   padding: 8px 34px;
 
   font-family: inherit;
@@ -509,8 +508,8 @@ body {
 
 /* Блок инфраструктур */
 .service-list {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   margin: 0;
   padding: 0;
   margin-top: 64px;
@@ -519,7 +518,6 @@ body {
 }
 
 .service-item {
-  flex-grow: 1;
   box-sizing: border-box;
   padding: 81px 0;
   min-width: 400px;
@@ -649,6 +647,10 @@ body {
 
 .subscribe-input:invalid {
   box-shadow: inset 0 0 0 2px #ff5757;
+}
+
+.subscribe-input:invalid:placeholder-shown {
+  box-shadow: none;
 }
 
 .catalog-input {
@@ -951,10 +953,13 @@ body {
   outline: 3px solid #83b3d3;
 }
 
+.grid-leftside {
+  grid-column: 1/2;
+}
+
 .modal-input-label {
   padding-top: 12px;
   padding-bottom: 12px;
-  grid-column: 1/2;
 
   font-weight: 700;
   font-size: 20px;
@@ -1237,7 +1242,6 @@ body {
 }
 
 /* Страница каталога */
-
 .catalog-background-container {
   padding: 35px 70px 70px;
   box-sizing: border-box;
