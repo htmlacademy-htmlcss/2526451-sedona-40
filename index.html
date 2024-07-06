@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <title>Седона</title>
   <link rel="stylesheet" href="styles/styles.css">
-  <link rel="icon" href="images/favicon.png" sizes="32x32">
+  <link rel="icon" href="favicon.ico" sizes="32x32">
 </head>
 
 <body>
@@ -20,7 +20,7 @@
             <a class="navigation-link navigation-link-current" tabindex="-1" href="index.html">Главная</a>
           </li>
           <li class="navigation-item">
-            <a class="navigation-link" href="about.html">О Седоне</a>
+            <a class="navigation-link" href="#">О Седоне</a>
           </li>
           <li class="navigation-item ">
             <a class="navigation-link" href="catalog.html">Гостиницы</a>
@@ -121,19 +121,20 @@
         <button class="search-button button-brown" type="button">
           Поиск Гостиницы в Седоне
         </button>
-
       </section>
+
       <section class="subscribe-main" data-test="subscribe">
         <form class="subscribe-form" name="subscribe--main-form" method="post" action="https://echo.htmlacademy.ru">
           <h2 class="subscribe-title"><label for="email-subscribe">Подпишитесь на рассылку</label></h2>
           <p class="subscribe-description">Только полезная информация и никакого спама, честное бойскаутское!</p>
           <div class="subscribe-container">
-            <input class="subscribe-input field border-radius-left" placeholder="Ваш e-mail" id="email-subscribe" name="e-mail" type="email">
+            <input class="subscribe-input field border-radius-left" placeholder="Ваш e-mail" id="email-subscribe" name="e-mail" type="email" required>
             <button class="subscribe-button button-blue" type="submit">Подписаться</button>
           </div>
         </form>
       </section>
     </main>
+
     <footer class="page-footer" data-test="footer">
       <ul class="social-list">
         <li>
@@ -183,7 +184,7 @@
         <section class="modal-content">
           <h2 class="modal-tittle">Поиск гостиницы в Седоне</h2>
           <form class="modal-form" name="search-form" action="https://echo.htmlacademy.ru/" method="post">
-            <label class="modal-input-label" for="check-in-date-arrival">Дата заезда:</label>
+            <label class="modal-input-label grid-leftside" for="check-in-date-arrival">Дата заезда:</label>
 
             <div class="modal-input-container">
               <input class="check-in-date-input modal-input" id="check-in-date-arrival" type="text" required name="check in date" value="27 Апреля 2020" placeholder="Укажите дату">
@@ -192,7 +193,7 @@
               </button>
               <span class="check-signature check-signature-error">Мы не можем отправить вас в прошлое.</span>
             </div>
-            <label class="modal-input-label" for="check-out-date-arrival">Дата выезда:</label>
+            <label class="modal-input-label grid-leftside" for="check-out-date-arrival">Дата выезда:</label>
             <div class="modal-input-container">
               <input class="check-out-date-input modal-input" id="check-out-date-arrival" type="text" required name="check out date" value="01 Сентября 2023" placeholder="Укажите дату">
               <button class="modal-calendar-button" type="button">
@@ -202,9 +203,9 @@
             </div>
 
             <!-- +/- взрослых/детей -->
-            <label class="modal-input-label modal-buttons-label" for="adults">Взрослые:</label>
+            <label class="modal-input-label modal-buttons-label grid-leftside" for="adults">Взрослые:</label>
             <div class="modal-spin-container">
-              <input class="modal-value-input" type="number" name="adults" id="adults" value="2">
+              <input class="modal-value-input" type="number" name="adults" id="adults" required value="2">
               <button class="plus-button" type="button">
                 <span class="visually-hidden">Количество взрослых прибавить</span>
                 <span class="plus-icon"></span>
@@ -221,7 +222,7 @@
               </button>
             </div>
             <div class="modal-spin-container">
-              <input class="modal-value-input" type="number" name="children" id="children" value="2">
+              <input class="modal-value-input" type="number" name="children" id="children" required value="2">
               <button class="plus-button" type="button">
                 <span class="visually-hidden">Количество детей прибавить</span>
                 <span class="plus-icon"></span>
